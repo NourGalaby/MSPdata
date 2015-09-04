@@ -27,4 +27,22 @@ Import Your File
 </form>
 </CENTER>
 </body>
+<br />
+    <br />
+    <br />
+    <?php  
+    $dir ='uploads';
+
+    if($handle = opendir($dir.'/'))
+    {
+       echo 'files uploaded: '.'<br>' ;
+
+while ($file = readdir($handle)){
+	if($file!='.' && $file!='..')
+echo '<a href="'.$dir.'/'.$file.'">'.$file.'<br>';
+
+}
+     }
+    ?>
+    <br />
 </html> 
