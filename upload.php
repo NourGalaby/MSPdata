@@ -8,7 +8,10 @@ $myFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 
 // Allow certain file formats
 if($myFileType != "xlsx" && $myFileType != "xls") {
-    echo "OPS... That is not an Excel file.";
+    echo "<script> 
+  alert('OPS... That is not an Excel file.'); 
+  window.location.href='main.php'
+  </script>";
     $uploadOk = 0;
 }
 
