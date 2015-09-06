@@ -32,7 +32,10 @@ exit;
 }else{
 	//set session to 0 if wrong pass
 	$_SESSION['inside']=0;
-echo "Wrong Username or Password test";
+echo "<script> 
+  alert('Wrong Username or Password'); 
+  window.location.href=''
+  </script>";
 }
 
 ?>
