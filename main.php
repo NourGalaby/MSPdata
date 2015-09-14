@@ -28,7 +28,8 @@
        echo 'files uploaded: '.'<br>' ;
 while ($file = readdir($handle)){
     if($file!='.' && $file!='..')
-echo '<a href="'.$dir.'/'.$file.'">'.$file.'<br>';
+//echo '<a href="'.$dir.'/'.$file.'">'.$file.'<br>';
+echo '<a href="visuals/visuals.php?name='.$file.'">'.$file.'<br> </a>';
 }
      }
     ?>

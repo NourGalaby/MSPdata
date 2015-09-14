@@ -15,7 +15,10 @@ include 'PHPExcel/IOFactory.php';
 
 
 
-$Myfilename='example_data.xlsx';
+ 
+//$Myfilename='example_data.xlsx';
+$Myfilename=$_GET['name'];
+
 
 $inputFileName = '../uploads/'.$Myfilename;
 echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
