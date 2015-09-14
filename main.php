@@ -33,7 +33,7 @@ echo '<a href="'.$dir.'/'.$file.'">'.$file.'<br>';
      }
     ?>
     </div>
-    <iframe src="visuals/visuals.html" width="1000" height="800"></iframe>
+    <iframe src="visuals/visuals.php" width="1000" height="800"></iframe>
 </body>
 <br/>
 <br/>
