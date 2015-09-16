@@ -34,7 +34,7 @@ echo '<a href="visuals/visuals.php?name='.$file.'">'.$file.'<br> </a>';
      }
     ?>
     </div>
-    <iframe src="visuals/visuals.php" width="1000" height="800"></iframe>
+
 </body>
 <br/>
 <br/>
