@@ -1,0 +1,10 @@
+Type Of Applicant,No,Sex,Percentage,Specialization,No,Degree,No,HowDidYouHear,No,EnglishLvl,No,Age,No,ExpectGradDate,No,City,No,University,No,Faculty,No
+Non-Unique,100,Male,1,Medical,20,B.Sc,50,A friend,20,Basic,20,18,40,2020,40,Cairo,150,6th Of October University,20,Faculty Of Agriculture,4
+Unique,60,Female,43,Computer Science,15,B.A,30,An ad online,10,Intermediate,50,19,60,2019,24,Alexandria,70,Ahram Canadian University,15,Faculty Of Arts,6
+,,          ,     ,Communication,10,M.Sc,15,MSP account on Twitter,15,Advanced,30,20,55,2018,50,Mansoura,50,Ain Shams University,30,Faculty Of Commerce,20
+,,	  ,  	  ,Business-related,20,M.B.A,10,MSP Page on FB,40,,,21,40,2017,60,Suez,40,Al-Azhar University,40,Faculty Of Computer And Information Science,80
+,,	  , 	  ,Engineering,50,Ph.D,5,,,,,22,80,2016,20,Other,80,Alexandria University,40,Faculty Of Engineering,40
+,,	  ,		  ,Marketing,20,,,,,,,23,40,2015,14,,,American University In Cairo,40,other,40
+,,	  ,		  ,Scientific,35,,,,,,,24,30,,,,,Arab Academy For Science And Technology And Maritime Transport(Cairo),20,,
+,,	  ,		, 			,   ,,,,,,,,,,,,,Arab Academy For Science And Technology And Maritime Transport(Alex),15,,
+,,    ,		, 			,   ,,,,,,,,,,,,,Other,80,,

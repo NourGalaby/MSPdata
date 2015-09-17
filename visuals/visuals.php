@@ -1,5 +1,14 @@
 <?php
 
+
+
+/**********************************/
+/**********************************/
+/***** Initialsinng ExcelPHP  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 error_reporting(E_ALL);
 set_time_limit(0);
 
@@ -43,11 +52,13 @@ echo '</pre>';
 
 
 	<?php
-	//////((((((**************************************
-///////////////////////////////////////	/**************
-	/// Start for Universites
-		//////((((((**************************************
-		//////((((((**************************************
+/**********************************/
+/**********************************/
+/*** Start of Univisity calc  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 	  //  $data = array( "cairo" , "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "ainshams", "helwan", "asuit", "alex", "mansoura" , "zagazig");
 		$october = 0; $ahram = 0; $cairo = 0; $shams = 0; $azhar = 0; $american = 0; $arab = 0; $aswan = 0; $assiut = 0; $alexandria = 0; $banha = 0; $beni = 0; $british = 0; $canadian = 0;
 		$damanhour = 0; $damietta = 0; $delta = 0; $japan = 0; $fayoum = 0; $german = 0; $helwan = 0; $kafrelsheikh = 0; $mansoura =0; $minia = 0; $minufya = 0; $miu = 0; $must = 0;
@@ -187,20 +198,26 @@ echo '</pre>';
 				}
 			}
 		}
-	//////((((((**************************************
-			//////((((((**************************************
-		//End OF Univiersties
-			//////((((((**************************************
-			//////((((((**************************************
+/**********************************/
+/**********************************/
+/***** End of Univisity calc  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/**********************************
 		?>
 
 
 		<?php
-	
-		//////**************************************
-		/////**************************************
-		// Start for Facluty
-		/////**************************************
+/**********************************/
+/**********************************/
+/*** Start of Faculty calc  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+
+
 	//	$data = array( "arts","arts","engineering" );
 		$other=0;
 	    $agriculture = 0 ;$arts = 0 ;$commerce = 0 ;$computer = 0 ;$education = 0 ;$dentistry = 0 ;$languages = 0 ;$law = 0 ;$medicine = 0 ;$nursing = 0 ;$pharmacy = 0 ;$engineering = 0 ;$science = 0 ;$specific = 0 ;
@@ -262,11 +279,13 @@ echo '</pre>';
 				}
 			}
 		}
-/////**************************************
-		/////**************************************
-// End of Faculty
-		/////**************************************
-		/////**************************************
+/**********************************/
+/**********************************/
+/*** End of Faculty calc  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 		?>
 
 
@@ -275,12 +294,13 @@ echo '</pre>';
 
 
 <?php
-/////**************************************
-		/////**************************************
-// start for City
-		/////**************************************
-		/////**************************************
-		
+/**********************************/
+/**********************************/
+/*** Start of City calc  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 	 
 		$Alexandria = 0; $Assiut = 0; $Banha = 0; $Beni = 0; $Cairo = 0; $Damanhour =0;$Damietta = 0; $Fayoum = 0; $Giza = 0; $Ismailia = 0; $Kafrelsheikh = 0; $Mansoura =0;$Minia = 0; $Minufya = 0; $Port = 0; $Sohag = 0; $South = 0; $Suaz =0; $Tanta = 0 ;$Zagazig = 0;
 		$city = array($Alexandria , $Assiut , $Banha , $Beni , $Cairo , $Damanhour , $Damietta , $Fayoum , $Giza , $Ismailia , $Kafrelsheikh , $Mansoura , $Minia , $Minufya , $Port , $Sohag , $South , $Suaz , $Tanta , $Zagazig);
@@ -365,11 +385,13 @@ echo '</pre>';
 		}
 
 
-/////**************************************
-		/////**************************************
-// END for City
-		/////**************************************
-		/////**************************************
+/**********************************/
+/**********************************/
+/*** End of City   *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 		
 		?>
 
@@ -377,7 +399,13 @@ echo '</pre>';
 
 
 <?php
-		// for Expected gradtion year
+	/**********************************/
+/**********************************/
+/*** Graduation Year  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 	  
 		$_2015 = 0; $_2016 = 0; $_2017 = 0; $_2018 = 0; $_2019 = 0; $_2020 =0;
 		$gradtion = array($_2015, $_2016, $_2017, $_2018, $_2019, $_2020);
@@ -412,12 +440,18 @@ echo '</pre>';
 				}
 			}
 		}
-
+/**********************************/
+/**********************************/
+/*** End  of Graduation year  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 		?>
 		
 <?php 
 
-
+//Debug
 echo '<pre>';
   print_r( $facluty);
 echo '</pre>';
@@ -434,16 +468,306 @@ echo '</pre>';
  ?>
 
 
-<html>
-	<head>
-		<title>Welcome MSP 2016</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript" src="jquery.csv-0.71.min.js"></script>
-	</head>
-	<body>
-		<h1>Results:</h1>
-		<div id="chart"></div>
-	</body>
+
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+<!-- ***********Date Visualsiation starts Here************* -->
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+<!-- ****************************************************** -->
+
+
+
+<<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>MSP 2016 Insights</title> 
+		<script src="https://www.google.com/jsapi"></script> 
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> 
+		<script src="jquery.csv-0.71.min.js"></script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([0,1]);
+					var options = { 
+						title: "Type Of Applicant" 
+						
+						};
+						
+					var chart = new google.visualization.PieChart(document.getElementById('PieChartTypeOfApplicant')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script> 
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([2,3]);
+					var options = { 
+						title: "Male/Female" 
+						
+						};
+						
+					var chart = new google.visualization.PieChart(document.getElementById('PieChartMaleFemale')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([4,5]);
+					var options = { 
+						title: "Specialization" 
+						
+						};
+						
+					var chart = new google.visualization.PieChart(document.getElementById('PieChartSpeci')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([6,7]);
+					var options = { 
+						title: "Academic Degree" 
+						
+						};
+						
+					var chart = new google.visualization.PieChart(document.getElementById('PieChartDegree')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([8,9]);
+					var options = { 
+						title: "How did you hear about the MSP" 
+						
+						};
+						
+					var chart = new google.visualization.PieChart(document.getElementById('PieChartHowDidYouHear')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([10,11]);
+					var options = { 
+						title: "English level" 
+						
+						};
+						
+					var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChartEnglishLvl')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([12,13]);
+					var options = { 
+						title: "Age" 
+						
+						};
+						
+					var chart = new google.visualization.ColumnChart(document.getElementById('ColumnChartAge')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([14,15]);
+					var options = { 
+						title: "Expected Graduation Date" 
+						
+						};
+						
+					var chart = new google.visualization.LineChart(document.getElementById('LineChartExpecGradDate')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([16,17]);
+					var options = { 
+						title: "Cities"
+						
+						
+						};
+						
+					var chart = new google.visualization.BarChart(document.getElementById('BarChartCity')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([18,19]);
+					var options = { 
+						title: "Universities"
+						
+						
+						};
+						
+					var chart = new google.visualization.BarChart(document.getElementById('BarChartUni')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+		<script>
+			google.load("visualization", "1", {packages:["corechart"]}); 
+			google.setOnLoadCallback(drawChart);
+			function drawChart() { 
+				// grab the CSV 
+				$.get("mydata.csv", function(csvString) {
+					// transform the CSV string into a 2-dimensional array 
+					var arrayData = $.csv.toArrays(csvString, {onParseValue: $.csv.hooks.castToScalar});
+					// this new DataTable object holds all the data 
+					var data = new google.visualization.arrayToDataTable(arrayData);
+					// this view can select a subset of the data at a time 
+					var view = new google.visualization.DataView(data); 
+					view.setColumns([20,21]);
+					var options = { 
+						title: "Faculties"
+						
+						
+						};
+						
+					var chart = new google.visualization.BarChart(document.getElementById('BarChartFaculty')); 
+					chart.draw(view, options);
+					
+					});
+				}
+		</script>
+	</head> 
+<body>
+	<h1>The required charts with sample data</h1> 
+	<div id="PieChartTypeOfApplicant"
+	<div id="PieChartMaleFemale"></div>
+	<div id="PieChartSpeci"></div>
+	<div id="PieChartDegree"></div>
+	<div id="PieChartHowDidYouHear"></div>
+	<div id="ColumnChartEnglishLvl"></div>
+	<div id="ColumnChartAge"></div>
+	<div id="LineChartExpecGradDate"></div>
+	<div id="BarChartCity"></div> 
+	<div id="BarChartUni"></div>
+	<div id="BarChartFaculty" 
+</body>
 </html>
