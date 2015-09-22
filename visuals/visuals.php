@@ -31,7 +31,8 @@ $Myfilename=$_GET['name'];
 
 
 $inputFileName = '../uploads/'.$Myfilename;
-echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
+//echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
+echo $Myfilename;
 $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
 
 
@@ -74,7 +75,7 @@ echo '</pre>';
 /**********************************/
 /*** Start of Univisity calc  *****/
 /**********************************/
-/**********************************/
+/********AND Number OF Applicnts********/
 /**********************************/
 /**********************************/
 
@@ -83,6 +84,10 @@ if(!$auth){
 
 $row='O';
 }
+
+
+//number of applicants
+$applicants_num=0;
 
 	  //  $data = array( "cairo" , "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "ainshams", "helwan", "asuit", "alex", "mansoura" , "zagazig");
 		$october = 0; $ahram = 0; $cairo = 0; $shams = 0; $azhar = 0; $american = 0; $arab = 0; $aswan = 0; $assiut = 0; $alexandria = 0; $banha = 0; $beni = 0; $british = 0; $canadian = 0;
@@ -94,6 +99,7 @@ $row='O';
 				break;
 			}
 			else{
+				$applicants_num++;
 				strtolower($data[$i][$row]);
 				trim($data[$i][$row]);
 				if(stristr($data[$i][$row], "october")){
@@ -554,7 +560,7 @@ echo '</pre>';
 
 
 echo '<pre>';
-  print_r( $Sex_type);
+  //print_r( $Sex_type);
 echo '</pre>';
 
 
@@ -574,6 +580,14 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 /**********************************/
+echo "Total Number of Apllicants: ".$applicants_num."<br>";
+echo "Total Number of Unique Apllicants: "."NOT YET";
+echo '<br />';
+echo "Male: ".$Sex_type[0];
+echo '<br >';
+echo "Female: ".$Sex_type[1];
+echo '<br >';
+
 $N_typeOfApplicant= array("Non-Unique","Unique","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 $N_Sex= array("Male","Female","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
@@ -642,7 +656,7 @@ fclose($file);
 
 	</head> 
 <body>
-	<h1>ResultsS:</h1> 
+	<h1>Results:</h1> 
 	<div id="PieChartTypeOfApplicant"></div>
 	<div id="PieChartMaleFemale"></div>
 	<div id="PieChartSpeci"></div>
