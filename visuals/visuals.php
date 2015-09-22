@@ -570,7 +570,7 @@ fclose($file);
 
 	</head> 
 <body>
-	<h1>Results:</h1> 
+	<h1>ResultsS:</h1> 
 	<div id="PieChartTypeOfApplicant"></div>
 	<div id="PieChartMaleFemale"></div>
 	<div id="PieChartSpeci"></div>
