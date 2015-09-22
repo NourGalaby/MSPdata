@@ -105,7 +105,8 @@ var view = new google.visualization.DataView(data_);
 					view.setColumns([16,17]);
 					var options = { 
 						title: "Cities"
-						
+						width: 600,
+        height: 400,
 						
 						};
 						

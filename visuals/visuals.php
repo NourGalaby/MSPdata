@@ -568,6 +568,8 @@ fclose($file);
 		<script src="jquery.csv-0.71.min.js"></script>
 		<script src="script.js"></script>
 
+		<div id="BarChartCity" style="width: 900px; height: 300px;"></div>
+
 	</head> 
 <body>
 	<h1>ResultsS:</h1> 
