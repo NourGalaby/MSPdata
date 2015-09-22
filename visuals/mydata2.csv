@@ -1,0 +1,5 @@
+Type Of Applicant,No,Sex,Percentage,Specialization,No,Degree,No,HowDidYouHear,No,EnglishLvl,No,Age,No,ExpectGradDate,No,City,No,University,No,Faculty,No
+Non-Unique,,20,Male,50,spec1,11,deg1,0,hear1,2,eng1,3,age1,23,2015,0,Alexandria,6,october,0,other,0
+Unique,20,Female,50,speci2,11,deg2,0,hear2,2,eng2,3,age2,23,2016,5,Assiut,0,ahram,0,agriculture ,3
+,20,,50,unfinished...,11,unfinshed..,0,soon...,2,soon...,3,soon...,23,2017,5,Banha,0,cairo,10,arts ,2
+,20,,50,,11,,0,,2,,3,,23,2018,1,Beni,0,shams,0,commerce ,0
