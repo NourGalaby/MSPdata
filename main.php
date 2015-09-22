@@ -25,7 +25,7 @@
     $dir ='uploads';
     if($handle = opendir($dir.'/'))
     {
-       echo 'files uploaded: '.'<br>' ;
+       echo 'Choose an Uploaded file: '.'<br>' ;
 while ($file = readdir($handle)){
     if($file!='.' && $file!='..')
 //echo '<a href="'.$dir.'/'.$file.'">'.$file.'<br>';

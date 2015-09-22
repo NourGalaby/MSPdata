@@ -31,7 +31,8 @@ $Myfilename=$_GET['name'];
 
 
 $inputFileName = '../uploads/'.$Myfilename;
-echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
+//echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
+echo $Myfilename;
 $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
 
 
@@ -74,146 +75,158 @@ echo '</pre>';
 /**********************************/
 /*** Start of Univisity calc  *****/
 /**********************************/
+/********AND Number OF Applicnts********/
 /**********************************/
 /**********************************/
-/**********************************/
+
+$row='BI';
+if(!$auth){
+
+$row='O';
+}
+
+
+//number of applicants
+$applicants_num=0;
+
 	  //  $data = array( "cairo" , "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "cairo", "ainshams", "helwan", "asuit", "alex", "mansoura" , "zagazig");
 		$october = 0; $ahram = 0; $cairo = 0; $shams = 0; $azhar = 0; $american = 0; $arab = 0; $aswan = 0; $assiut = 0; $alexandria = 0; $banha = 0; $beni = 0; $british = 0; $canadian = 0;
 		$damanhour = 0; $damietta = 0; $delta = 0; $japan = 0; $fayoum = 0; $german = 0; $helwan = 0; $kafrelsheikh = 0; $mansoura =0; $minia = 0; $minufya = 0; $miu = 0; $must = 0;
 		$modern = 0; $nile = 0; $port = 0; $sohag = 0; $south = 0; $stem = 0; $suez = 0; $canal = 0; $tanta = 0; $francaise = 0; $sadat = 0; $zewail = 0; $zagazig = 0;
 		$universities = array($october ,$ahram ,$cairo ,$shams ,$azhar ,$american ,$arab ,$aswan ,$assiut ,$alexandria ,$banha ,$beni ,$british ,$canadian ,$damanhour ,$damietta ,$delta ,$japan ,$fayoum ,$german ,$helwan ,$kafrelsheikh ,$mansoura ,$minia ,$minufya ,$miu ,$must ,$modern ,$nile ,$port ,$sohag ,$south ,$stem ,$suez ,$canal ,$tanta ,$francaise ,$sadat ,$zewail ,$zagazig);
 		for ($i=1; ; $i++) { 
-			if (empty($data[$i]['BI'])) {
+			if (empty($data[$i][$row])) {
 				break;
 			}
 			else{
-				strtolower($data[$i]['BI']);
-				trim($data[$i]['BI']);
-				if(stristr($data[$i]['BI'], "october")){
+				$applicants_num++;
+				strtolower($data[$i][$row]);
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "october")){
 					$universities[0]++;
 					$october++;
 				}
-				elseif (stristr($data[$i]['BI'], "ahram")) {
+				elseif (stristr($data[$i][$row], "ahram")) {
 					$universities[1]++;
 					$ahram++;
 				}
-				elseif (stristr($data[$i]['BI'], "cairo")) {
+				elseif (stristr($data[$i][$row], "cairo")) {
 					$universities[2]++;
 					$cairo++;
 				}
-				elseif (stristr($data[$i]['BI'], "shams")) {
+				elseif (stristr($data[$i][$row], "shams")) {
 					$universities[3]++; 
 					$shams++;
 				}
-				elseif (stristr($data[$i]['BI'], "american")) {
+				elseif (stristr($data[$i][$row], "american")) {
 					$universities[4]++;
 					$american++;
 				}
-				elseif (stristr($data[$i]['BI'], "arab")) {
+				elseif (stristr($data[$i][$row], "arab")) {
 					$universities[5]++;
 					$arab++;
 				}
-				elseif (stristr($data[$i]['BI'], "aswan")) {
+				elseif (stristr($data[$i][$row], "aswan")) {
 					$universities[6]++;
 				}
-				elseif (stristr($data[$i]['BI'], "assiut")) {
+				elseif (stristr($data[$i][$row], "assiut")) {
 					$universities[7]++;
 				}
-				elseif (stristr($data[$i]['BI'], "alexandria")) {
+				elseif (stristr($data[$i][$row], "alexandria")) {
 					$universities[8]++;
 				}
-				elseif (stristr($data[$i]['BI'], "banha")) {
+				elseif (stristr($data[$i][$row], "banha")) {
 				
 					$universities[9]++;
 				}
-				elseif (stristr($data[$i]['BI'], "beni")) {
+				elseif (stristr($data[$i][$row], "beni")) {
 					$universities[10]++;
 				}
-				elseif (stristr($data[$i]['BI'], "british")) {
+				elseif (stristr($data[$i][$row], "british")) {
 					$universities[11]++;
 				}
-				elseif (stristr($data[$i]['BI'], "canadian")) {
+				elseif (stristr($data[$i][$row], "canadian")) {
 					$universities[12]++;
 				}
-				elseif (stristr($data[$i]['BI'], "damanhour")) {
+				elseif (stristr($data[$i][$row], "damanhour")) {
 					$universities[13]++;
 				}
-				elseif (stristr($data[$i]['BI'], "damietta")) {
+				elseif (stristr($data[$i][$row], "damietta")) {
 					$universities[14]++;
 				}
-				elseif (stristr($data[$i]['BI'], "delta")) {
+				elseif (stristr($data[$i][$row], "delta")) {
 					$universities[15]++;
 				}
-				elseif (stristr($data[$i]['BI'], "japan")) {
+				elseif (stristr($data[$i][$row], "japan")) {
 					$universities[16]++;
 				}
-				elseif (stristr($data[$i]['BI'], "fayoum")) {
+				elseif (stristr($data[$i][$row], "fayoum")) {
 					$universities[17]++;
 				}
-				elseif (stristr($data[$i]['BI'], "german")) {
+				elseif (stristr($data[$i][$row], "german")) {
 					$universities[18]++;
 				}
-				elseif (stristr($data[$i]['BI'], "helwan")) {
+				elseif (stristr($data[$i][$row], "helwan")) {
 					$universities[19]++;
 				}
-				elseif (stristr($data[$i]['BI'], "kafrelsheikh")) {
+				elseif (stristr($data[$i][$row], "kafrelsheikh")) {
 					$universities[20]++;
 				}
-				elseif (stristr($data[$i]['BI'], "mansoura")) {
+				elseif (stristr($data[$i][$row], "mansoura")) {
 					$universities[21]++;
 				}
-				elseif (stristr($data[$i]['BI'], "minia")) {
+				elseif (stristr($data[$i][$row], "minia")) {
 					$universities[22]++;
 				}
-				elseif (stristr($data[$i]['BI'], "minufya")) {
+				elseif (stristr($data[$i][$row], "minufya")) {
 					$universities[23]++;
 				}
-				elseif (stristr($data[$i]['BI'], "mansoura")) {
+				elseif (stristr($data[$i][$row], "mansoura")) {
 					$universities[24]++;
 				}
-				elseif (stristr($data[$i]['BI'], "miu")) {
+				elseif (stristr($data[$i][$row], "miu")) {
 					$universities[25]++;
 				}
-				elseif (stristr($data[$i]['BI'], "must")) {
+				elseif (stristr($data[$i][$row], "must")) {
 					$universities[26]++;
 				}
-				elseif (stristr($data[$i]['BI'], "modern")) {
+				elseif (stristr($data[$i][$row], "modern")) {
 					$universities[27]++;
 				}
-				elseif (stristr($data[$i]['BI'], "nile")) {
+				elseif (stristr($data[$i][$row], "nile")) {
 					$universities[28]++;
 				}
-				elseif (stristr($data[$i]['BI'], "port")) {
+				elseif (stristr($data[$i][$row], "port")) {
 					$universities[29]++;
 				}
-				elseif (stristr($data[$i]['BI'], "sohag")) {
+				elseif (stristr($data[$i][$row], "sohag")) {
 					$universities[30]++;
 				}
-				elseif (stristr($data[$i]['BI'], "south")) {
+				elseif (stristr($data[$i][$row], "south")) {
 					$universities[31]++;
 				}
-				elseif (stristr($data[$i]['BI'], "stem")) {
+				elseif (stristr($data[$i][$row], "stem")) {
 					$universities[32]++;
 				}
-				elseif (stristr($data[$i]['BI'], "suez")) {
+				elseif (stristr($data[$i][$row], "suez")) {
 					$universities[33]++;
 				}
-				elseif (stristr($data[$i]['BI'], "canal")) {
+				elseif (stristr($data[$i][$row], "canal")) {
 					$universities[34]++;
 				}
-				elseif (stristr($data[$i]['BI'], "tanta")) {
+				elseif (stristr($data[$i][$row], "tanta")) {
 					$universities[35]++;
 				}
-				elseif (stristr($data[$i]['BI'], "française")) {
+				elseif (stristr($data[$i][$row], "française")) {
 					$universities[36]++;
 				}
-				elseif (stristr($data[$i]['BI'], "sadat")) {
+				elseif (stristr($data[$i][$row], "sadat")) {
 					$universities[37]++;
 				}
-				elseif (stristr($data[$i]['BI'], "zewail")) {
+				elseif (stristr($data[$i][$row], "zewail")) {
 					$universities[38]++;
 				}
-				elseif (stristr($data[$i]['BI'], "zagazig")) {
+				elseif (stristr($data[$i][$row], "zagazig")) {
 					$universities[39]++;
 				}
 
@@ -240,6 +253,11 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 /**********************************/
+$row='BQ';
+if(!$auth){
+
+$row='Q';
+}
 
 
 	//	$data = array( "arts","arts","engineering" );
@@ -247,54 +265,54 @@ echo '</pre>';
 	    $agriculture = 0 ;$arts = 0 ;$commerce = 0 ;$computer = 0 ;$education = 0 ;$dentistry = 0 ;$languages = 0 ;$law = 0 ;$medicine = 0 ;$nursing = 0 ;$pharmacy = 0 ;$engineering = 0 ;$science = 0 ;$specific = 0 ;
 		$facluty = array($other,$agriculture ,$arts ,$commerce ,$computer ,$education ,$dentistry ,$languages ,$law ,$medicine ,$nursing ,$pharmacy ,$engineering ,$science ,$specific,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 		for ($i=1; ; $i++) { 
-			if (empty($data[$i]['BQ'])) {
+			if (empty($data[$i][$row])) {
 			//	echo "Done at i = ".$i."  ";
-			//	echo "value is ".$data[2]['BQ'];
+			//	echo "value is ".$data[2][$row];
 				break;
 			}
 			else{
-				//strtolower($data[$i]['BQ']); 
-				trim($data[$i]['BQ']);
-				if(stristr($data[$i]['BQ'], "cairo")){
+				//strtolower($data[$i][$row]); 
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "cairo")){
 					$facluty[0]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "Faculty of Agriculture")) {
+				elseif (stristr($data[$i][$row], "Faculty of Agriculture")) {
 					$facluty[1]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "arts")) {
+				elseif (stristr($data[$i][$row], "arts")) {
 					$facluty[2]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "commerce")) {
+				elseif (stristr($data[$i][$row], "commerce")) {
 					$$facluty[3]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "computer")) {
+				elseif (stristr($data[$i][$row], "computer")) {
 					$facluty[4]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "education")) {
+				elseif (stristr($data[$i][$row], "education")) {
 					$facluty[5]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "languages")) {
+				elseif (stristr($data[$i][$row], "languages")) {
 					$facluty[6]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "law")) {
+				elseif (stristr($data[$i][$row], "law")) {
 					$facluty[7]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "Faculty of Medicine")) {
+				elseif (stristr($data[$i][$row], "Faculty of Medicine")) {
 					$facluty[8]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "nursing")) {
+				elseif (stristr($data[$i][$row], "nursing")) {
 					$facluty[9]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "pharmacy")) {
+				elseif (stristr($data[$i][$row], "pharmacy")) {
 					$facluty[10]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "engineering")) {
+				elseif (stristr($data[$i][$row], "engineering")) {
 					$facluty[11]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "science")) {
+				elseif (stristr($data[$i][$row], "science")) {
 					$facluty[12]++;
 				}
-				elseif (stristr($data[$i]['BQ'], "other")) {
+				elseif (stristr($data[$i][$row], "other")) {
 					$facluty[13]++;
 
 				}
@@ -325,81 +343,90 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 /**********************************/
+
+$row='EC';
+if(!$auth){
+
+$row='L';
+}
+
+
+
 	 $othercity=0;
 		$Alexandria = 0; $Assiut = 0; $Banha = 0; $Beni = 0; $Cairo = 0; $Damanhour =0;$Damietta = 0; $Fayoum = 0; $Giza = 0; $Ismailia = 0; $Kafrelsheikh = 0; $Mansoura =0;$Minia = 0; $Minufya = 0; $Port = 0; $Sohag = 0; $South = 0; $Suaz =0; $Tanta = 0 ;$Zagazig = 0;
 		$city = array($Alexandria , $Assiut , $Banha , $Beni , $Cairo , $Damanhour , $Damietta , $Fayoum , $Giza , $Ismailia , $Kafrelsheikh , $Mansoura , $Minia , $Minufya , $Port , $Sohag , $South , $Suaz , $Tanta , $Zagazig,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 		for ($i=1; ; $i++) { 
-			if (empty($data[$i]['EC'])) {
+			if (empty($data[$i][$row])) {
 						//echo "Done at i = ".$i."  ";
 		//	echo "value is ".$Alexandria;
 				break;
 			}
 			else{
-				strtolower($data[$i]['EC']);
-				trim($data[$i]['EC']);
-				if(stristr($data[$i]['EC'], "alexandria")){
+				strtolower($data[$i][$row]);
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "alexandria")){
 					$city[0]++;
 					$Alexandria++;
 				}
-				elseif (stristr($data[$i]['EC'], "assiut")) {
+				elseif (stristr($data[$i][$row], "assiut")) {
 					$city[1]++;
 					$Assiut++;
 				}
-				elseif (stristr($data[$i]['EC'], "banha")) {
+				elseif (stristr($data[$i][$row], "banha")) {
 					$city[2]++;
 					$Banha++;
 				}
-				elseif (stristr($data[$i]['EC'], "beni")) {
+				elseif (stristr($data[$i][$row], "beni")) {
 					$city[3]++;
 					$Beni++;
 				}
-				elseif (stristr($data[$i]['EC'], "cairo")) {
+				elseif (stristr($data[$i][$row], "cairo")) {
 					$city[4]++;
 					$Cairo++;
 				}
-				elseif (stristr($data[$i]['EC'], "damanhour")) {
+				elseif (stristr($data[$i][$row], "damanhour")) {
 					$city[5]++;
 				}
-				elseif (stristr($data[$i]['EC'], "damietta")) {
+				elseif (stristr($data[$i][$row], "damietta")) {
 					$city[6]++;
 				}
-				elseif (stristr($data[$i]['EC'], "fayoum")) {
+				elseif (stristr($data[$i][$row], "fayoum")) {
 					$city[7]++;
 				}
-				elseif (stristr($data[$i]['EC'], "giza")) {
+				elseif (stristr($data[$i][$row], "giza")) {
 					$city[8]++;
 				}
-				elseif (stristr($data[$i]['EC'], "ismailia")) {
+				elseif (stristr($data[$i][$row], "ismailia")) {
 					$city[9]++;
 				}
-				elseif (stristr($data[$i]['EC'], "kafrelsheikh")) {
+				elseif (stristr($data[$i][$row], "kafrelsheikh")) {
 					$city[10]++;
 				}
-				elseif (stristr($data[$i]['EC'], "mansoura")) {
+				elseif (stristr($data[$i][$row], "mansoura")) {
 					$city[11]++;
 				}
-				elseif (stristr($data[$i]['EC'], "minia")) {
+				elseif (stristr($data[$i][$row], "minia")) {
 					$city[12]++;
 				}
-				elseif (stristr($data[$i]['EC'], "minufya")) {
+				elseif (stristr($data[$i][$row], "minufya")) {
 					$city[13]++;
 				}
-				elseif (stristr($data[$i]['EC'], "port")) {
+				elseif (stristr($data[$i][$row], "port")) {
 					$city[14]++;
 				}
-				elseif (stristr($data[$i]['EC'], "sohag")) {
+				elseif (stristr($data[$i][$row], "sohag")) {
 					$city[15]++;
 				}
-				elseif (stristr($data[$i]['EC'], "south")) {
+				elseif (stristr($data[$i][$row], "south")) {
 					$city[16]++;
 				}
-				elseif (stristr($data[$i]['EC'], "suez")) {
+				elseif (stristr($data[$i][$row], "suez")) {
 					$city[17]++;
 				}
-				elseif (stristr($data[$i]['EC'], "tanta")) {
+				elseif (stristr($data[$i][$row], "tanta")) {
 					$city[18]++;
 				}
-				elseif (stristr($data[$i]['EC'], "zagazig")) {
+				elseif (stristr($data[$i][$row], "zagazig")) {
 					$city[19]++;
 				}
 				else {
@@ -419,7 +446,52 @@ echo '</pre>';
 		
 		?>
 
+<?php 
+	/**********************************/
+/**********************************/
+/*** Male Female   *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 
+$row='DU';
+if(!$auth){
+
+$row='k';
+}
+
+
+$Sex_type=array(0,0,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+
+		for ($i=1; ; $i++) { 
+			if (empty($data[$i][$row])) {
+				break;
+			}
+			else{
+				strtolower($data[$i][$row]);
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "Mrs")){
+					$Sex_type[1]++;
+					
+				}
+				else {
+					//male
+					$Sex_type[0]++;
+				}
+
+			
+			}
+		}
+
+	/**********************************/
+/**********************************/
+/*** Male Female    End *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+ ?>
 
 
 <?php
@@ -430,33 +502,39 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 /**********************************/
+
+$row='DQ';
+if(!$auth){
+
+$row='U';
+}
 	  
 		$_2015 = 0; $_2016 = 0; $_2017 = 0; $_2018 = 0; $_2019 = 0; $_2020 =0;
 		$gradtion = array($_2015, $_2016, $_2017, $_2018, $_2019, $_2020,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 		for ($i=1; ; $i++) { 
-			if (empty($data[$i]['DQ'])) {
+			if (empty($data[$i][$row])) {
 				break;
 			}
 			else{
-				strtolower($data[$i]['DQ']);
-				trim($data[$i]['DQ']);
-				if(stristr($data[$i]['DQ'], "2015")){
+				strtolower($data[$i][$row]);
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "2015")){
 					$gradtion[0]++;
 					$_2015++;
 				}
-				elseif (stristr($data[$i]['DQ'], "2016")) {
+				elseif (stristr($data[$i][$row], "2016")) {
 					$gradtion[1]++;
 				}
-				elseif (stristr($data[$i]['DQ'], "2017")) {
+				elseif (stristr($data[$i][$row], "2017")) {
 					$gradtion[2]++;
 				}
-				elseif (stristr($data[$i]['DQ'], "2018")) {
+				elseif (stristr($data[$i][$row], "2018")) {
 					$gradtion[3]++;
 				}
-				elseif (stristr($data[$i]['DQ'], "2019")) {
+				elseif (stristr($data[$i][$row], "2019")) {
 					$gradtion[4]++;
 				}
-				elseif (stristr($data[$i]['DQ'], "2020")) {
+				elseif (stristr($data[$i][$row], "2020")) {
 					$gradtion[5]++;
 				}
 				else {
@@ -482,7 +560,7 @@ echo '</pre>';
 
 
 echo '<pre>';
-//  print_r( $gradtion);
+  //print_r( $Sex_type);
 echo '</pre>';
 
 
@@ -502,6 +580,14 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 /**********************************/
+echo "Total Number of Apllicants: ".$applicants_num."<br>";
+echo "Total Number of Unique Apllicants: "."NOT YET";
+echo '<br />';
+echo "Male: ".$Sex_type[0];
+echo '<br >';
+echo "Female: ".$Sex_type[1];
+echo '<br >';
+
 $N_typeOfApplicant= array("Non-Unique","Unique","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 $N_Sex= array("Male","Female","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
@@ -534,12 +620,12 @@ $file = fopen("mydata.csv","w");
  //fwrite($file,"\r\n".",".","."	  ,"."		,"." 			,"."   ,".",".",".",".",".",".",".",".",".",".",".",".","."Arab Academy For Science And Technology And Maritime Transport(Alex),"."15,".","." ");
  //fwrite($file,"\r\n".",".","."    ,"."		,"." 			,"."   ,".",".",".",".",".",".",".",".",".",".",".",".","."Other,"."80,".","."");
 
- $i=0;
+ $i=0;	
 
 for($i =0 ;$i<40; $i++ ) {
 //fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."20".",".$N_Sex[$i].","."50".",".$N_Specialization[$i].","."11".",".$N_Degree[$i].","."0".",".$N_Hear[$i].","."2".",".$N_English[$i].","."3".",".$N_age[$i].","."23".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 
-fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].","."".",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].","."".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
+fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].","."".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 }
 fclose($file);
 
@@ -572,7 +658,7 @@ fclose($file);
 
 	</head> 
 <body>
-	<h1>ResultsS:</h1> 
+	<h1>Results:</h1> 
 	<div id="PieChartTypeOfApplicant"></div>
 	<div id="PieChartMaleFemale"></div>
 	<div id="PieChartSpeci"></div>
