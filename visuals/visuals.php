@@ -440,7 +440,52 @@ $row='L';
 		
 		?>
 
+<?php 
+	/**********************************/
+/**********************************/
+/*** Male Female   *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
 
+$row='DU';
+if(!$auth){
+
+$row='k';
+}
+
+
+$Sex_type=array(0,0,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+
+		for ($i=1; ; $i++) { 
+			if (empty($data[$i][$row])) {
+				break;
+			}
+			else{
+				strtolower($data[$i][$row]);
+				trim($data[$i][$row]);
+				if(stristr($data[$i][$row], "Mrs")){
+					$Sex_type[1]++;
+					
+				}
+				else {
+					//male
+					$Sex_type[0]++;
+				}
+
+			
+			}
+		}
+
+	/**********************************/
+/**********************************/
+/*** Male Female    End *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+ ?>
 
 
 <?php
@@ -509,7 +554,7 @@ echo '</pre>';
 
 
 echo '<pre>';
-  print_r( $gradtion);
+  print_r( $Sex_type);
 echo '</pre>';
 
 
@@ -561,12 +606,12 @@ $file = fopen("mydata.csv","w");
  //fwrite($file,"\r\n".",".","."	  ,"."		,"." 			,"."   ,".",".",".",".",".",".",".",".",".",".",".",".","."Arab Academy For Science And Technology And Maritime Transport(Alex),"."15,".","." ");
  //fwrite($file,"\r\n".",".","."    ,"."		,"." 			,"."   ,".",".",".",".",".",".",".",".",".",".",".",".","."Other,"."80,".","."");
 
- $i=0;
+ $i=0;	
 
 for($i =0 ;$i<40; $i++ ) {
 //fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."20".",".$N_Sex[$i].","."50".",".$N_Specialization[$i].","."11".",".$N_Degree[$i].","."0".",".$N_Hear[$i].","."2".",".$N_English[$i].","."3".",".$N_age[$i].","."23".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 
-fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].","."".",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].","."".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
+fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].","."".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 }
 fclose($file);
 
