@@ -36,12 +36,19 @@ echo $Myfilename;
 $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
 
 
-echo '<hr />';
 
 $data = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
 //var_dump($sheetData);
 //$nnn = "AA";
-//echo $data[1][$nnn];
+
+//echo "helloo : ";
+//echo $data[2]['DE'];
+
+
+
+
+
+
 $auth;
 //echo substr($Myfilename,0,3);
 $Auth_test =substr($Myfilename,0,3);
@@ -94,7 +101,7 @@ $applicants_num=0;
 		$damanhour = 0; $damietta = 0; $delta = 0; $japan = 0; $fayoum = 0; $german = 0; $helwan = 0; $kafrelsheikh = 0; $mansoura =0; $minia = 0; $minufya = 0; $miu = 0; $must = 0;
 		$modern = 0; $nile = 0; $port = 0; $sohag = 0; $south = 0; $stem = 0; $suez = 0; $canal = 0; $tanta = 0; $francaise = 0; $sadat = 0; $zewail = 0; $zagazig = 0;
 		$universities = array($october ,$ahram ,$cairo ,$shams ,$azhar ,$american ,$arab ,$aswan ,$assiut ,$alexandria ,$banha ,$beni ,$british ,$canadian ,$damanhour ,$damietta ,$delta ,$japan ,$fayoum ,$german ,$helwan ,$kafrelsheikh ,$mansoura ,$minia ,$minufya ,$miu ,$must ,$modern ,$nile ,$port ,$sohag ,$south ,$stem ,$suez ,$canal ,$tanta ,$francaise ,$sadat ,$zewail ,$zagazig);
-		for ($i=1; ; $i++) { 
+		for ($i=2; ; $i++) { 
 			if (empty($data[$i][$row])) {
 				break;
 			}
@@ -264,7 +271,7 @@ $row='Q';
 		$other=0;
 	    $agriculture = 0 ;$arts = 0 ;$commerce = 0 ;$computer = 0 ;$education = 0 ;$dentistry = 0 ;$languages = 0 ;$law = 0 ;$medicine = 0 ;$nursing = 0 ;$pharmacy = 0 ;$engineering = 0 ;$science = 0 ;$specific = 0 ;
 		$facluty = array($other,$agriculture ,$arts ,$commerce ,$computer ,$education ,$dentistry ,$languages ,$law ,$medicine ,$nursing ,$pharmacy ,$engineering ,$science ,$specific,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
-		for ($i=1; ; $i++) { 
+		for ($i=2; ; $i++) { 
 			if (empty($data[$i][$row])) {
 			//	echo "Done at i = ".$i."  ";
 			//	echo "value is ".$data[2][$row];
@@ -464,7 +471,7 @@ $row='k';
 
 $Sex_type=array(0,0,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
-		for ($i=1; ; $i++) { 
+		for ($i=2; ; $i++) { 
 			if (empty($data[$i][$row])) {
 				break;
 			}
@@ -493,6 +500,91 @@ $Sex_type=array(0,0,"","","","","","","","","","","","","","","","","","","","",
 /**********************************/
  ?>
 
+<?php 
+
+
+	/**********************************/
+/**********************************/
+/*** AGE       START       *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+$row='DE';
+if(!$auth){
+
+$row='N';
+}
+
+
+	$age_of_appls = array(0, 0, 0, 0, 0,0,0,0,0,0,0,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+		
+
+	for ($i=2; ; $i++) { 
+			if (empty($data[$i][$row])) {
+				break;
+			}
+			else{
+
+
+				$dateee=date_create_from_format("d-m-Y",$data[$i]['DE']);
+$myage = date_diff($dateee, date_create('now'))->y;
+ 
+echo $myage." ".$i."<br>";
+					if(stristr($myage, "16")){
+					$age_of_appls[0]++;
+					
+				}
+				elseif(stristr($myage, "17")){
+					$age_of_appls[1]++;
+					
+				}
+				elseif (stristr($myage, "18")) {
+					$age_of_appls[2]++;
+				}
+				elseif (stristr($myage, "19")) {
+					$age_of_appls[3]++;
+				}
+				elseif (stristr($myage, "20")) {
+					$age_of_appls[4]++;
+				}
+				elseif (stristr($myage, "21")) {
+					$age_of_appls[5]++;
+				}
+				elseif (stristr($myage, "22")) {
+					$age_of_appls[6]++;
+				}
+					elseif (stristr($myage, "23")) {
+					$age_of_appls[7]++;
+				}
+					elseif (stristr($myage, "24")) {
+					$age_of_appls[8]++;
+				}
+					elseif (stristr($myage, "25")) {
+					$age_of_appls[9]++;
+				}
+					elseif (stristr($myage, "26")) {
+					$age_of_appls[10]++;
+				}
+					elseif (stristr($myage, "27")) {
+					$age_of_appls[11]++;
+				}
+				else {
+					
+				}
+			}
+		}
+
+	/**********************************/
+/**********************************/
+/*** AGE       END      *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+
+ ?>
+
 
 <?php
 	/**********************************/
@@ -511,7 +603,7 @@ $row='U';
 	  
 		$_2015 = 0; $_2016 = 0; $_2017 = 0; $_2018 = 0; $_2019 = 0; $_2020 =0;
 		$gradtion = array($_2015, $_2016, $_2017, $_2018, $_2019, $_2020,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
-		for ($i=1; ; $i++) { 
+		for ($i=2; ; $i++) { 
 			if (empty($data[$i][$row])) {
 				break;
 			}
@@ -560,7 +652,7 @@ echo '</pre>';
 
 
 echo '<pre>';
-  //print_r( $Sex_type);
+ // print_r( $age_of_appls);
 echo '</pre>';
 
 
@@ -597,7 +689,7 @@ $N_Degree=array("deg1","deg2","unfinshed..","","","","","","","","","","","","",
 
 $N_Hear=array("hear1","hear2","soon...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 $N_English=array("eng1","eng2","soon...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
-$N_age=array("age1","age2","soon...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+$N_age=array("16","17","18","19","20","21","22","23","24","25","26","27","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 $IN_ExpectGradDate=array("2015","2016","2017","2018","2019","2020","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
 $N_City=array("Alexandria" , "Assiut" , "Banha" , "Beni" , "Cairo" , "Damanhour" , "Damietta" , "Fayoum" , "Giza" , "Ismailia" , "Kafrelsheikh" , "Mansoura" , "Minia" , "Minufya" , "Port" , "Sohag" , "South" , "Suaz" , "Tanta" , "Zagazig","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
@@ -625,7 +717,7 @@ $file = fopen("mydata.csv","w");
 for($i =0 ;$i<40; $i++ ) {
 //fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."20".",".$N_Sex[$i].","."50".",".$N_Specialization[$i].","."11".",".$N_Degree[$i].","."0".",".$N_Hear[$i].","."2".",".$N_English[$i].","."3".",".$N_age[$i].","."23".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 
-fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].","."".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
+fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].",".$age_of_appls[$i].",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 }
 fclose($file);
 
@@ -654,7 +746,7 @@ fclose($file);
 		<script src="jquery.csv-0.71.min.js"></script>
 		<script src="script.js"></script>
 
-		<div id="BarChartCity" style="width: 900px; height: 300px;"></div>
+
 
 	</head> 
 <body>
@@ -667,8 +759,8 @@ fclose($file);
 	<div id="ColumnChartEnglishLvl"></div>
 	<div id="ColumnChartAge"></div>
 	<div id="LineChartExpecGradDate"></div>
-	<div id="BarChartCity"></div> 
-	<div id="BarChartUni"></div>
-	<div id="BarChartFaculty"></div> 
+	<div id="BarChartCity" style="width: 100px; height: 600px;"></div>
+	<div id="BarChartUni" style="width: 100px; height: 1000px;"></div>
+	<div id="BarChartFaculty"></div>
 </body>
 </html>

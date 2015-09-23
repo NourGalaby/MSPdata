@@ -104,10 +104,9 @@ var view = new google.visualization.DataView(data_);
 				var view = new google.visualization.DataView(data_);	
 					view.setColumns([16,17]);
 					var options = { 
-						title: "Cities"
+						title: "Cities",
 						width: 600,
-        height: 400,
-						
+						height: 1200,
 						};
 						
 					var chart = new google.visualization.BarChart(document.getElementById('BarChartCity')); 
@@ -116,9 +115,10 @@ var view = new google.visualization.DataView(data_);
 				var view = new google.visualization.DataView(data_);	
 					view.setColumns([18,19]);
 					var options = { 
-						title: "Universities"
+						title: "Universities",
 						
-						
+						width: 600,
+						height: 1200 ,
 						};
 						
 					var chart = new google.visualization.BarChart(document.getElementById('BarChartUni')); 
@@ -128,8 +128,9 @@ var view = new google.visualization.DataView(data_);
 			var view = new google.visualization.DataView(data_);		
 					view.setColumns([20,21]);
 					var options = { 
-						title: "Faculties"
-						
+						title: "Faculties" ,
+						width: 600,
+						height: 1400 ,
 						
 						};
 						
