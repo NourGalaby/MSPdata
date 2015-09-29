@@ -2,10 +2,10 @@ Type Of Applicant,No,Sex,Percentage,Specialization,No,Degree,No,HowDidYouHear,No
 Non-Unique,,Male,8,spec1,,deg1,,hear1,,eng1,3,16,1,2015,0,Alexandria,9,october,0,other,0
 Unique,,Female,1,speci2,,deg2,,hear2,,eng2,3,17,1,2016,5,Assiut,1,ahram,0,agriculture ,3
 ,,,,unfinished...,,unfinshed..,,soon...,,soon...,3,18,1,2017,5,Banha,0,cairo,10,arts ,2
-,,,,,,,,,,,3,19,1,2018,1,Beni,0,shams,0,commerce ,0
-,,,,,,,,,,,3,20,1,2019,0,Cairo,2,azhar,0,computer ,33
-,,,,,,,,,,,3,21,1,2020,1,Damanhour,0,american,0,education ,0
-,,,,,,,,,,,3,22,1,,,Damietta,0,arab,2,dentistry ,0
+,,,,,,,,,,,3,19,0,2018,1,Beni,0,shams,0,commerce ,0
+,,,,,,,,,,,3,20,0,2019,0,Cairo,2,azhar,0,computer ,33
+,,,,,,,,,,,3,21,0,2020,1,Damanhour,0,american,0,education ,0
+,,,,,,,,,,,3,22,4,,,Damietta,0,arab,2,dentistry ,0
 ,,,,,,,,,,,3,23,1,,,Fayoum,0,aswan,0,languages ,0
 ,,,,,,,,,,,3,24,1,,,Giza,2,assiut,0,law ,6
 ,,,,,,,,,,,3,25,1,,,Ismailia,0,alexandria,5,medicine ,0
