@@ -54,11 +54,11 @@ $auth;
 $Auth_test =substr($Myfilename,0,3);
 
 if($Auth_test=="Non"){
-	echo "Non Authenticated file";
+	echo "<br>"."Non Authenticated file";
 $auth=false;
 
 }else{
-		echo "Authenticated file";
+		echo "<br>"."Detected Authenticated file";
 $auth=true;
 }
 
@@ -453,6 +453,28 @@ $row='L';
 		
 		?>
 
+<?php
+/**********************************/
+/**********************************/
+/** Microsoft Community start  ***/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+	
+
+	/**********************************/
+/**********************************/
+/*** Microsoft Community End   *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+
+		?>
+
+
+
 <?php 
 	/**********************************/
 /**********************************/
@@ -530,7 +552,7 @@ $row='N';
 				$dateee=date_create_from_format("d-m-Y",$data[$i]['DE']);
 $myage = date_diff($dateee, date_create('now'))->y;
  
-echo $myage." ".$i."<br>";
+//echo $myage." ".$i."<br>";
 					if(stristr($myage, "16")){
 					$age_of_appls[0]++;
 					
@@ -643,6 +665,67 @@ $row='U';
 /**********************************/
 		?>
 		
+
+
+
+
+<?php
+	/**********************************/
+/**********************************/
+/*** Degree  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+
+$row='FI';
+if(!$auth){
+
+$row='T';
+}
+	  
+		$BSC = 0; $BA = 0; $MSC = 0; $MBA = 0; $PHD = 0;
+		$Degree = array(0,0,0,0,0,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+		for ($i=2; ; $i++) { 
+			if (empty($data[$i][$row])) {
+				break;
+			}
+			else{
+				
+				
+				
+				trim($data[$i][$row]);
+				if(strcmp($data[$i][$row], "B.Sc") ==0 ){
+					
+					$Degree[0]++;
+				}
+				elseif ( strcmp ($data[$i][$row], "B.A") ==0 ) {
+					$Degree[1]++;
+				}
+				elseif (strcmp ($data[$i][$row], "M.Sc")==0 ) {
+					$Degree[2]++;
+				}
+				elseif (strcmp ($data[$i][$row], "M.B.A")==0 ) {
+					$Degree[3]++;
+				}
+				elseif (strcmp ($data[$i][$row], "Ph.D")==0 ) {
+					$Degree[4]++;
+				}
+			
+				else {
+					
+				}
+			}
+		}
+/**********************************/
+/**********************************/
+/*** Degree End  *****/
+/**********************************/
+/**********************************/
+/**********************************/
+/**********************************/
+		?>
+		
 <?php 
 
 //Debug
@@ -685,7 +768,7 @@ $N_Sex= array("Male","Female","","","","","","","","","","","","","","","","",""
 
 $N_Specialization=array("spec1","speci2","unfinished...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
-$N_Degree=array("deg1","deg2","unfinshed..","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
+$N_Degree=array("B.Sc.","B.A.","M.Sc.","M.B.A","Ph.D.","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 
 $N_Hear=array("hear1","hear2","soon...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
 $N_English=array("eng1","eng2","soon...","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","");
@@ -717,7 +800,7 @@ $file = fopen("mydata.csv","w");
 for($i =0 ;$i<40; $i++ ) {
 //fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."20".",".$N_Sex[$i].","."50".",".$N_Specialization[$i].","."11".",".$N_Degree[$i].","."0".",".$N_Hear[$i].","."2".",".$N_English[$i].","."3".",".$N_age[$i].","."23".",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 
-fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].","."".",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].",".$age_of_appls[$i].",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
+fwrite($file,"\r\n".$N_typeOfApplicant[$i].","."".",".$N_Sex[$i].",".$Sex_type[$i].",".$N_Specialization[$i].","."".",".$N_Degree[$i].",".$Degree[$i].",".$N_Hear[$i].","."".",".$N_English[$i].","."3".",".$N_age[$i].",".$age_of_appls[$i].",".$IN_ExpectGradDate[$i].",".$gradtion[$i].",".$N_City[$i].",".$city[$i].",".$N_Univeisty[$i].",".$universities[$i].",".$N_Faculty[$i].",".$facluty[$i]);
 }
 fclose($file);
 
@@ -750,14 +833,20 @@ fclose($file);
 
 	</head> 
 <body>
-	<h1>Results:</h1> 
-	<div id="PieChartTypeOfApplicant"></div>
+
+	<a href="visuals/visuals.php?name='.$file.'">Download Table<br> </a>
+
+
+	<h1>Visuals :</h1> 
+
+<div id="PieChartTypeOfApplicant"></div>
 	<div id="PieChartMaleFemale"></div>
+			<div id="ColumnChartAge"></div>
 	<div id="PieChartSpeci"></div>
 	<div id="PieChartDegree"></div>
 	<div id="PieChartHowDidYouHear"></div>
 	<div id="ColumnChartEnglishLvl"></div>
-	<div id="ColumnChartAge"></div>
+
 	<div id="LineChartExpecGradDate"></div>
 	<div id="BarChartCity" style="width: 100px; height: 600px;"></div>
 	<div id="BarChartUni" style="width: 100px; height: 1000px;"></div>
