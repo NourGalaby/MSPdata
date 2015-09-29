@@ -834,7 +834,7 @@ fclose($file);
 	</head> 
 <body>
 
-	<a href="visuals/visuals.php?name='.$file.'">Download Table<br> </a>
+	<a href="mydata.csv">Download Table<br> </a>
 
 
 	<h1>Visuals :</h1> 
