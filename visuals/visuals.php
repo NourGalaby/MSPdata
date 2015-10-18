@@ -809,7 +809,7 @@ echo '</pre>';
 /**********************************/
 /**********************************/
 echo "Total Number of Apllicants: ".$applicants_num."<br>";
-echo "Total Number of Unique Apllicants: "."NOT YET";
+//echo "Total Number of Unique Apllicants: "."NOT YET";
 echo '<br />';
 echo "Male: ".$Sex_type[0];
 echo '<br >';
