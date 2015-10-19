@@ -28,4 +28,17 @@ if($uploadOk==1){
  echo "Sorry,the file was not uploaded successfully";
 }
 
+
+echo "<br>  <br> You will be redirirected to the main page in 1 secounds  <br> ";
+ echo ' <meta http-equiv="refresh" content="3;url=main.php" />';
 ?> 
+
+<html>
+<head>
+  <title>
+  </title>
+</head>
+<body>
+
+</body>
+</html>
